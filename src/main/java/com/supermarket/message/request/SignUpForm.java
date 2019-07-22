@@ -22,8 +22,8 @@ public class SignUpForm {
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
-
-    private Number contact;
+    
+    private Long contact;
 
     public String getName() {
         return name;
@@ -45,11 +45,11 @@ public class SignUpForm {
         return email;
     }
 
-    public Number getContact() {
+    public Long getContact() {
 		return contact;
 	}
 
-	public void setContact(Number contact) {
+	public void setContact(Long contact) {
 		this.contact = contact;
 	}
 
