@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.supermarket.model.Admin;
@@ -22,6 +23,7 @@ import com.supermarket.repository.AdminRepository;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
+@RequestMapping("/api/test")
 public class AdminController {
 	@Autowired
 	AdminRepository repository;
