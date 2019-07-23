@@ -23,7 +23,7 @@ import com.supermarket.repository.AdminRepository;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/test")
 public class AdminController {
 	@Autowired
 	AdminRepository repository;
