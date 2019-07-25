@@ -19,9 +19,16 @@ public class TestRestAPIs {
 	
 	@GetMapping("/api/test/user")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-	public String userAccess() {
-		return ">>> User Contents!";
+	public ResponseEntity<Iterable<Admin>> findAlls(){
+		System.out.println("In find all");
+		
+		Iterable<Admin> products=service.findAll();
+		
+		return ResponseEntity.ok(products);
 	}
+//	public String userAccess() {
+//		return ">>> User Contents!";
+//	}
 	
 	@GetMapping("/api/test/admin")
 	@PreAuthorize("hasRole('ADMIN')")
