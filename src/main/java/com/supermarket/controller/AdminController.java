@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,10 @@ public class AdminController {
 
 		return admins;
 	}
+    @GetMapping("/product/{id}")
+    public Optional<Admin> getProductById(@PathVariable(value = "id") Long id) {
+        return service.findById(id);
+    }
 	
 	@PostMapping(value = "/create")
 	public Admin postCustomer(@RequestBody Admin admin) {
@@ -82,4 +87,23 @@ public class AdminController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+	@PutMapping("/product/update/{id}")
+	public ResponseEntity<Admin> updateProduct(@PathVariable("id") long id,@PathVariable("id") double quantity, @RequestBody Admin admin) {
+		System.out.println("Update Product with ID = " + id + "...");
+
+		Optional<Admin> adminData = service.findById(id);
+
+		if (adminData.isPresent()) {
+			Admin _admin = adminData.get();
+			_admin.setProductname(admin.getProductname());
+			_admin.setPrice(admin.getPrice());
+			_admin.setDescription(admin.getDescription());
+			_admin.setQuantity(admin.getQuantity());
+			_admin.setActive(admin.isActive());
+			return new ResponseEntity<>(service.save(_admin), HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
 }

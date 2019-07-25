@@ -32,8 +32,9 @@ public class TestRestAPIs {
 		
 		return ResponseEntity.ok(admins);
 	}
-	
 //	public String adminAccess() {
-//		return ">>> Admin Contents";
-//	}
+//	return ">>> Admin Contents";
+//}
+	
+
 }
