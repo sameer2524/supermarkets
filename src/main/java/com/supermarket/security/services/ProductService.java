@@ -1,13 +1,12 @@
 package com.supermarket.security.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 import com.supermarket.model.Admin;
-import com.supermarket.repository.ProductRepository;
 
 public interface ProductService {
 
-	
 	Iterable<Admin> findAlls();
+	Optional<Admin> findById(Long id);
 }

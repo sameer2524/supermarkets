@@ -1,5 +1,7 @@
 package com.supermarket.security.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public Iterable<Admin> findAlls() {
 		return repository.findAll();
+	}
+
+	@Override
+	public Optional<Admin> findById(Long id) {
+		return repository.findById(id);
 	}
 	
 	
