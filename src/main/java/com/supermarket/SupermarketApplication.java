@@ -17,7 +17,7 @@ public class SupermarketApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/").allowedOrigins("http://localhost:4200/user");
+				registry.addMapping("/").allowedOrigins("http://localhost:4200");
 			}
 		};
 	}            

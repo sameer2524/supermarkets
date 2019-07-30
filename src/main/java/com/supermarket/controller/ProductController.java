@@ -32,6 +32,14 @@ public class ProductController {
 
 		return products;
 	}
+	@GetMapping(value = "/products/name/{productname}")
+	public List<Admin> findByProductname(@PathVariable String productname) {
+
+		List<Admin> admins =  new ArrayList<>();
+		service.findByProductname(productname).forEach(admins::add);;
+		
+		return admins;
+	}
 	
 	 @GetMapping("/product/{id}")
 	    public Optional<Admin> getProductById(@PathVariable(value = "id") Long id) {

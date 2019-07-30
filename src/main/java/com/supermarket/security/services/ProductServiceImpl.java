@@ -1,5 +1,6 @@
 package com.supermarket.security.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,9 @@ public class ProductServiceImpl implements ProductService {
 		return repository.findById(id);
 	}
 	
+	@Override
+	public List<Admin> findByProductname(String productname) {
+		return repository.findByProductname(productname);
+	}
 	
 }
